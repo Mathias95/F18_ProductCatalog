@@ -1,0 +1,28 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{ 
+    var pages = Model.Content.Site().Children();
+}
+<style>
+    a.item {
+        font-size: 14px;
+        color: brown;
+    }
+    a.active {
+        font-size: 24px;
+        color: green;
+    }
+</style>
+<header>
+    <img src="#" />
+    <nav>
+        @foreach(var page in pages)
+        {
+            var cssClass = "item";
+            if(page.Id == Model.Content.Id)
+            {
+                cssClass = "active";
+            }
+            <a class="@cssClass" href="@page.Url">@page.Name</a>
+        }
+    </nav>
+</header>

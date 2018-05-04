@@ -1,0 +1,10 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    var noIndex = Model.Content.GetPropertyValue<bool>("noIndex");
+}
+<title>@Umbraco.Field("metaTitle")</title>
+<meta name="description" content="@Model.Content.GetPropertyValue("metaDescription")" />
+@if (noIndex)
+{
+    <meta name="robots" content="noindex" />
+}

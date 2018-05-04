@@ -1,0 +1,16 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Home>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "_Master.cshtml";
+    var featuredProducts = Model.Content.FeaturedProducts;
+        //Model.Content.GetPropertyValue<IEnumerable<Product>>("featuredProducts");
+}
+<img src="@Model.Content.HeroImage.Url" /><br />
+<p>@Model.Content.HeroText</p>
+<hr />
+@foreach(var product in featuredProducts)
+{
+
+    <img src="" /><br />
+    <h2>@product.Name</h2>
+}

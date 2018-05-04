@@ -1,0 +1,18 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.CategoryContainer>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+    Layout = "_Master.cshtml";
+    var categories = Model.Content.Children<Category>();
+}
+
+@foreach (var category in categories)
+{
+    var products = category.Products;
+    <h1>@category.Name</h1>
+    <ul>
+        @foreach (var product in products)
+        {
+            <li>@product.Name</li>
+        }
+    </ul>
+}

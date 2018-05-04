@@ -1,0 +1,18 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @Html.Partial("Global/SEO")
+
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+</head>
+<body>
+    @Html.Partial("Global/Header")
+    @RenderBody()
+    @Html.Partial("Global/Footer")
+</body>
+</html>
