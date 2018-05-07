@@ -5,6 +5,29 @@
     var featuredProducts = Model.Content.FeaturedProducts;
         //Model.Content.GetPropertyValue<IEnumerable<Product>>("featuredProducts");
 }
+@foreach(var box in Model.Content.Boxes)
+{
+    if(box.DocumentTypeAlias == "textBox")
+    {
+        TextBox b = (TextBox)box;
+        <div class="box">
+            <h2>@b.Headline</h2>
+            @b.BodyText
+        </div>
+    }
+    else
+    {
+        ProductBox p = (ProductBox)box;
+        <div class="box">
+            <h2>@p.Headline</h2>
+            <a href="@p.BoxLink.Url">
+                <img src="@p.BoxPicture.Url?width=200&height=100" />
+            </a>
+        </div>
+    }
+}
+<hr />
+
 <img src="@Model.Content.HeroImage.Url" /><br />
 <p>@Model.Content.HeroText</p>
 <hr />

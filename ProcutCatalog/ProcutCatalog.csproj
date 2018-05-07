@@ -296,6 +296,7 @@
     <Content Include="Views\Partials\Global\Header.cshtml" />
     <Content Include="Views\Partials\Global\Footer.cshtml" />
     <Content Include="Views\Partials\Global\SEO.cshtml" />
+    <Content Include="Views\ContentPage.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

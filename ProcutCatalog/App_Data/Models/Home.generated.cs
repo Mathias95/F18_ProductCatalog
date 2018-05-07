@@ -46,6 +46,15 @@ namespace Umbraco.Web.PublishedContentModels
 		}
 
 		///<summary>
+		/// Boxes
+		///</summary>
+		[ImplementPropertyType("boxes")]
+		public IEnumerable<IPublishedContent> Boxes
+		{
+			get { return this.GetPropertyValue<IEnumerable<IPublishedContent>>("boxes"); }
+		}
+
+		///<summary>
 		/// Featured products
 		///</summary>
 		[ImplementPropertyType("featuredProducts")]

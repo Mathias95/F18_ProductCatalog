@@ -1,0 +1,21 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.ContentPage>
+@using ContentModels = Umbraco.Web.PublishedContentModels;
+@{
+	Layout = "_Master.cshtml";
+}
+<h1>@Model.Content.Headline</h1>
+@Html.GetGridHtml(Model.Content, "dynamicBodyText")
+
+<h2>Pictures</h2>
+@foreach(PictureLinkBox picture in Model.Content.PictureLinks)
+{
+    <a href="@picture.BoxLink.Url">
+        <img src="@picture.BoxPicture.Url?width=200&height=100" />
+    </a>
+}
+<h2>Numbers</h2>
+@foreach(NumberFeature n in Model.Content.Numbers)
+{
+    <h3>@n.NumberText<br /><small>@n.BoxText</small> </h3>
+
+}
